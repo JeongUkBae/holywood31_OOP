@@ -1,4 +1,4 @@
-package real;
+package gms;
 
 import javax.swing.JOptionPane;
 
@@ -48,28 +48,27 @@ public class Main {
 								String[] op = JOptionPane.showInputDialog(null,"[계산기]입력하세요. ").split(" ");
 								switch(op[1]) {
 									case "+" :
-										JOptionPane.showMessageDialog(null,String.format("%s %s %s 답은 '%s' 입니다.", op[0],op[1],op[2],
-												c.plus(Integer.parseInt(op[0]),Integer.parseInt(op[2]))));
+										JOptionPane.showMessageDialog(null,String.format("%s %s %s 답은 '%s' 입니다.", 
+										op[0],op[1],op[2],c.plus(Integer.parseInt(op[0]),Integer.parseInt(op[2]))));
 										break;
 									case "-" :  
-										JOptionPane.showMessageDialog(null,String.format("%s %s %s 답은 '%s' 입니다.", op[0],op[1],op[2],
-												c.minus(Integer.parseInt(op[0]),Integer.parseInt(op[2]))));
+										JOptionPane.showMessageDialog(null,String.format("%s %s %s 답은 '%s' 입니다.", 
+										op[0],op[1],op[2],c.minus(Integer.parseInt(op[0]),Integer.parseInt(op[2]))));
 										break;
 									case "*" :  
-										JOptionPane.showMessageDialog(null,String.format("%s %s %s 답은 '%s' 입니다.", op[0],op[1],op[2],
-												c.multi(Integer.parseInt(op[0]),Integer.parseInt(op[2]))));
+										JOptionPane.showMessageDialog(null,String.format("%s %s %s 답은 '%s' 입니다.", 
+										op[0],op[1],op[2],c.multi(Integer.parseInt(op[0]),Integer.parseInt(op[2]))));
 										break;
 									case "/" :  
-										JOptionPane.showMessageDialog(null,String.format("%s %s %s 답은 '%s' 입니다.", op[0],op[1],op[2],
-												c.divid(Integer.parseInt(op[0]),Integer.parseInt(op[2]))));
+										JOptionPane.showMessageDialog(null,String.format("%s %s %s 답은 '%s' 입니다.", 
+										op[0],op[1],op[2],c.divid(Integer.parseInt(op[0]),Integer.parseInt(op[2]))));
 										break;
 									case "%" : 
-										JOptionPane.showMessageDialog(null,String.format("%s %s %s 답은 '%s' 입니다.", op[0],op[1],op[2],
-												c.mod(Integer.parseInt(op[0]),Integer.parseInt(op[2]))));
+										JOptionPane.showMessageDialog(null,String.format("%s %s %s 답은 '%s' 입니다.",
+										op[0],op[1],op[2],c.mod(Integer.parseInt(op[0]),Integer.parseInt(op[2]))));
 										break;
 								}
-								
-								break;
+						
 							case "2" : 
 								String x = JOptionPane.showInputDialog(null,"원하는 x 단을 입력하세요.");
 								JOptionPane.showMessageDialog(null,String.format("[%s 단] \n%s",x,c.gugudan(Integer.parseInt(x)))); 
@@ -79,7 +78,14 @@ public class Main {
 						}//calc end
 						
 					case "3" : //로또 
-						
+						Lotto l = new Lotto();
+						String sel = JOptionPane.showInputDialog(null,"[Lotto] \n 0.상위메뉴 1.번호생성받기 2.다시받기");	
+						switch(sel) {
+							case "0" : return;
+							case "1" : JOptionPane.showMessageDialog(null,String.format("[Lotto] 번호생성 \n%s ",l.randomNum()));
+								break;
+							case "2" : continue;
+						}
 						
 						break;
 					
