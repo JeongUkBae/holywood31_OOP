@@ -27,7 +27,7 @@ public class Main {
 						JOptionPane.showMessageDialog(null,"계좌가 개설되었습니다.");
 					break;
 				case "3" :
-						String open = account.open(member.name);
+						String open = account.info(member.name);
 						JOptionPane.showMessageDialog(null, open);
 						
 					break;

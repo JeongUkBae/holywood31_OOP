@@ -34,7 +34,7 @@ public class Account {
 		return today;
 	}
 	
-	public String open(String name) {
+	public String info(String name) {
 		return String.format("은행이름 : %s \n"
 				+ "계좌번호 : %s \n"
 				+ "이   름 : %s\n"
