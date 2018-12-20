@@ -1,4 +1,4 @@
-package Card;
+package card;
 import javax.swing.JOptionPane;
 
 public class Main {
