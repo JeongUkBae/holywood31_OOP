@@ -1,35 +1,12 @@
-package bank1;
+package bank21;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
-/**
- * 계좌클래스
- * [속성] 
- * 상수 :  BANK_NAME 
- * 맴버변수 : 
- * 	1. accountNum 계좌번호 
- * 	2. money 잔액
- * 	3. today 해당일
- * [기능]
- *  1. generatorAccountNum() 계좌번호 생성(랜덤)
- *  2. today() 해당일 생성
- *  3. withdraw() 출금하기
- *  4. deposit() 입금하기
- *  5. accNuminfo() 계좌정보
- * */
-public class Account {
-	final static String BANK_NAME = "국민은행";
-	String accountNum, today;
-	int money;
-	Account(int money) {
-		this.accountNum = this.generatorAccountNum();
-		this.today = this.today();
-		this.money = money;
-		
-	}
+
+public class AccountService {
 	
-	
+	// 서비스 로직에는 맴버변수를 두지 않는다. 
 	public String generatorAccountNum() {
 		String accountNum="";
 		Random random = new Random();
@@ -53,47 +30,42 @@ public class Account {
 		return today;
 	}
 	
-	public int money() {
-		int money = 0;
-		return money;
+	
+	public String toString(String accountNum, 
+			String name ,String today, int money) {
+		return String.format("[계좌정보] %s\n"
+				+ "계좌번호 : %s\n"
+				+ "이름 : %s\n"
+				+ "생성날짜 : %s\n"
+				+ "계좌잔액 : %s\n",AccountBean.BANK_NAME, //상수는 클래스 이름.상수이름
+				accountNum,name ,today, money);
 	}
 	/**
 	 * 출금하기
 	 * */
 	public String withdraw(int money) {
 		String message = "";
-		if(money>0 && this.money >= money) {
+/*		if(money>0 && this.money >= money) {
 			this.money -= money;
 			message = "거래완료";
 		} else {
 			message = "출금액이 잘못되었거나 잔고가 부족합니다.";
 		}
-		return message;
+*/		return message;
 	}
 	/**
 	 * 입금하기
 	 * */
 	public String deposit(int money) {
 		String message ="";
-		if(money>0) {
+/*		if(money>0) {
 			this.money += money;
 			message = "거래완료";
 		} else {
 			message = "입금액이 잘못되었습니다.";
 		}
-		return message;
+*/		return message;
 	}
 	/**
 	 * */
-	public String accNuminfo(String name) {
-		
-		String accNuminfo = String.format("[계좌정보] %s\n"
-				+ "예금주명 : %s\n"
-				+ "계좌번호 : %s\n"
-				+ "생성날짜 : %s\n"
-				+ "계좌잔액 : %s\n",BANK_NAME, name ,accountNum, today, money);
-		
-		return accNuminfo;
-	}
-
-}//field
+}

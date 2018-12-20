@@ -2,7 +2,7 @@ package gms1;
 
 import javax.swing.JOptionPane;
 
-import bank1.Member;
+import bank01.Member;
 
 public class Main {
 	public static void main(String[] args) {
