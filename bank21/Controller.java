@@ -24,8 +24,11 @@ public class Controller {
 							JOptionPane.showInputDialog("비밀번호입력"));
 					break;
 				case "2" : 
-					String info = member.toString();
-					JOptionPane.showMessageDialog(null, info);
+//					String info = member.toString();
+//					JOptionPane.showMessageDialog(null, info);
+					member = new MemberBean();
+					JOptionPane.showInternalMessageDialog(null,
+							String.format(member.toString()));
 					break;
 				case "3" :
 					account = new AccountBean();
