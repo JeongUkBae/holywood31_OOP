@@ -1,4 +1,4 @@
-package bank21;
+package bank31;
 
 public class MemberBean {
 	private String id, name,  ssn, pass; // 맴버변수=인스턴스변수
@@ -31,7 +31,7 @@ public class MemberBean {
 	 * 회원정보 보여주기
 	 * */
 	public String toString() {
-		String toString = "";
+		String info = "";
 		return String.format("정보확인\n"
 				+ "ID : %s \n"
 				+ "이름 : %s \n"
