@@ -1,4 +1,4 @@
-package bank41;
+package bank42;
 
 public interface MemberService {
 	//회원가입

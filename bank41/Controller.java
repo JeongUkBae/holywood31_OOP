@@ -54,6 +54,8 @@ public class Controller {
 						JOptionPane.showInputDialog("변경할 비밀번호입력"));
 				break;
 			case "13" :
+				memberService.delete(JOptionPane.showInputDialog("아이디 입력"),
+						JOptionPane.showInputDialog("비밀번호 입력"));
 				
 				break;
 				
