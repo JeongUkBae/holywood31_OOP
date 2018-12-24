@@ -1,12 +1,12 @@
 package card;
 import javax.swing.JOptionPane;
 
-public class Main {
+public class CardController {
 	public static void main(String[] args) {
 		CardBean cardBean = null;
 		while (true) {
 			switch(JOptionPane.showInputDialog("[환영합니다.] 0.종료 \n"
-						+ "1.카드선택  2.TV정보보기 ")) { 
+						+ "1.카드선택  2. ")) { 
 					case "0": 
 						JOptionPane.showMessageDialog(null,"이용해주셔서 감사합니다. "
 									+ "\n종료중...");

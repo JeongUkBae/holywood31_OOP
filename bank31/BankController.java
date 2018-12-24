@@ -2,7 +2,7 @@ package bank31;
 
 import javax.swing.JOptionPane;
 
-public class Main {
+public class BankController {
 	public static void main(String[] args) {
 		MemberBean member = null;
 		AccountBean account = null;

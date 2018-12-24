@@ -1,5 +1,6 @@
 package bank21;
 
+import javax.management.MBeanServerDelegateMBean;
 import javax.swing.JOptionPane;
 
 public class Controller {
@@ -11,13 +12,14 @@ public class Controller {
 		while (true) {
 			switch(JOptionPane.showInputDialog("[환영합니다.] 0.종료 \n"
 					+ "1.회원가입  2.회원정보  3.계좌생성 4.계좌확인 \n"
-					+ "5.입금 6.출금 7.비밀번호 변경")) {
+					+ "5.입금 6.출금 7.비밀번호 변경\n "
+					+ "8.회원목록 9.회원검색 10.로그인" )) {
 				case "0" :
 					JOptionPane.showMessageDialog(null,"이용해주셔서 감사합니다. "
 							+ "\n종료중...");
 					return;
 				case "1" : 
-					member = memberService.join(
+					memberService.join(
 							JOptionPane.showInputDialog("ID 입력"),
 							JOptionPane.showInputDialog("실명 입력"),
 							JOptionPane.showInputDialog("주민번호 확인"),
@@ -64,6 +66,30 @@ public class Controller {
 					member.setPass(passch);
 					JOptionPane.showMessageDialog(null,"비밀번호가 변경되었습니다.");
 					break;
+				case "8" : 
+					MemberBean[] members = memberService.list();
+/*					String temp = "";
+					for(int i=0; i<members.length;i++) {
+						temp += members[i]+"\n";
+					}
+*/					JOptionPane.showMessageDialog(null,members);
+					break;
+				case "9":
+					String id = JOptionPane.showInputDialog("검색할 아이디 입력");
+					JOptionPane.showMessageDialog(null,memberService.find(id));
+					break;
+				case "10":
+					id = JOptionPane.showInputDialog("로그인 아이디");
+					String pw = JOptionPane.showInputDialog("로그인 비밀번호");
+					boolean ok = memberService.login(id,pw);/*) {
+						JOptionPane.showMessageDialog(null,"로그인성공");
+					}else {
+						JOptionPane.showMessageDialog(null,"로그인실패");
+					}*/
+					JOptionPane.showMessageDialog(null,(ok) ? "로그인 성공 " : "로그인실패");
+					
+					break;
+				
 			}
 		}
 
