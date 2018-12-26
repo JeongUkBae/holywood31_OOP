@@ -29,25 +29,25 @@ public class Controller {
 			case "6" : break;
 			case "7" : break;
 			case "8" : 
-				JOptionPane.showMessageDialog(null,memberService.list());
+				JOptionPane.showMessageDialog(null,memberService.findAll());
 				break;
 			case "9" : 
-				JOptionPane.showMessageDialog(null, memberService.find(
+				JOptionPane.showMessageDialog(null, memberService.findById(
 						JOptionPane.showInputDialog("아이디를 입력하세요.")));
 				
 				break;
 			case "10" : 
-				boolean ok = memberService.login(JOptionPane.showInputDialog("아이디"),
+				boolean ok = memberService.existMember(JOptionPane.showInputDialog("아이디"),
 						JOptionPane.showInputDialog("비밀번호"));;
 				JOptionPane.showMessageDialog(null, (ok)? "로그인 성공" : "로그인 실패");
 				
 				break;
 			case "11" : 
 				JOptionPane.showMessageDialog(null,String.format(
-						"[가입인원]\n   %s 명",memberService.count()));
+						"[가입인원]\n   %s 명",memberService.countMember()));
 				break;
 			case "12" : 
-				memberService.update(JOptionPane.showInputDialog("아이디입력"),
+				memberService.updatePassword(JOptionPane.showInputDialog("아이디입력"),
 						JOptionPane.showInputDialog("비밀번호입력"),
 						JOptionPane.showInputDialog("새로운 비밀번호 입력"));
 				

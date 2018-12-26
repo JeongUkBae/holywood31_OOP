@@ -69,7 +69,8 @@ public class MemberServiceImpl implements MemberService {
 	public void delete(String id, String pass) {
 		for(int i=0; i<count; i++) {
 			if(members[i].getId().equals(id) && members[i].getPass().equals(pass)) {
-				members[i] = null;
+				members[i] = members[count-1];
+				members[count-1] = null;
 				count--;
 				
 				System.out.println("값 : "+members[i]);

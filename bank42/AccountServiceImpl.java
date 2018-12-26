@@ -3,34 +3,77 @@ package bank42;
 public class AccountServiceImpl implements AccountService{
 
 	@Override
-	public String generatorAccountNum() {
+	public void createAccount(int money) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String makeAccountNum() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String today() {
+	public AccountBean[] findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String toString(String accountNum,
-			String name, String today, int money) {
+	public AccountBean[] findByMemberId(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String withdraw(int money) {
+	public AccountBean findByAccountNum(String accountNum) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String deposit(int money) {
+	public int countAccount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean existAccount(String accountNum) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public String info(String accountNum, String name, String today, int money) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public String findToday() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String withdrawMoney(int money) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String depositMoney(int money) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteAccountNum() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
 
 }
